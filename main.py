@@ -38,6 +38,10 @@ def cost_per_class(annual_cost, credits):
     """Give back what one 50-minute CS 1430 class meeting costs."""
     return cost_per_credit(annual_cost, credits) * CS1430_CREDITS / CS1430_MEETINGS_PER_SEMESTER 
 
+def cost_of_bachelors(annual_cost):
+    """Give back what a four year degree costs."""
+    return annual_cost * 4
+
 
 # ---- PROGRAM ----
 
@@ -59,12 +63,13 @@ def main():
               Option 3: Cost per day
               Option 4: Cost per credit
               Option 5: Cost per class
+              Option 6: Cost per degree
               Option Q: Exit
               Choose an option: """)
 
         # Add a branch for each menu option here.
         if choice == "1":
-            print(f"Cost per semeset: ${cost_per_semester(annual_cost):.2f}")
+            print(f"Cost per semester: ${cost_per_semester(annual_cost):.2f}")
         elif choice == "2":
             print(f"Cost per month: ${cost_per_month(annual_cost):.2f}")
         elif choice == "3":
@@ -73,6 +78,8 @@ def main():
             print(f"Cost per credit: ${cost_per_credit(annual_cost, credits):.2f}")
         elif choice == "5":
             print(f"Cost per class: ${cost_per_class(annual_cost, credits):.2f}")
+        elif choice == "6":
+            print(f"Cost per degree: ${cost_of_bachelors(annual_cost):.2f}")
         elif choice == "Q" or "q":
             break
 
